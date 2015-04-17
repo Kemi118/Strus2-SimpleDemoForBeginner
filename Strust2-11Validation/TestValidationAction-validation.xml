@@ -1,0 +1,19 @@
+<!DOCTYPE validators PUBLIC
+        "-//Apache Struts//XWork Validator 1.0.2//EN"
+        "http://struts.apache.org/dtds/xwork-validator-1.0.2.dtd">
+
+<validators>
+	<field name="age">
+		<field-validator type="int">
+			<param name="min">20</param>
+			<param name="max">100</param>
+			<message key="message"></message>
+		</field-validator>
+	</field>
+	
+	<validator type="expression">
+		<param name="expression"><![CDATA[password==password2]]></param>
+		<message >两次密码不匹配</message>
+	</validator>
+
+</validators>

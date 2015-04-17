@@ -1,0 +1,33 @@
+
+配置 FileUploadInterceptor 参数
+	maximumSize (optional) - 上传单个文件最大值 ，默认 2M
+							the maximum size (in bytes) that the interceptor 
+							will allow a file reference to be set on the action. 
+							Note, this is not related to the various properties 
+							found in struts.properties. Default to approximately 2MB. 
+	allowedTypes (optional) - a comma separated list of content types (ie: text/html) 
+							that the interceptor will allow a file reference to be set 
+							on the action. If none is specified allow all types to be uploaded. 
+	allowedExtensions (optional) - a comma separated list of file extensions (ie: .html)
+							that the interceptor will allow a file reference to be set on 
+							the action. If none is specified allow all extensions to be uploaded. 
+
+配置错误信息
+	参照 org.apache.struts2 下 的  struts-messages.properties
+	
+	
+配置文件上传总大小 
+	<!-- 文件上传总大小 -->
+	<constant name="struts.multipart.maxSize" value="10240000"></constant>
+	参照  /org/apache/struts2  下的  default.properties
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	

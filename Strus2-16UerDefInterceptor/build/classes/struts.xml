@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+
+	<package name="testvalidation" extends="struts-default">
+		
+		<interceptors>
+			<interceptor name="myinterceptor" class="com.luodexin.strus2.userdefinterceptor.interceptors.MyInterceptor"></interceptor>
+		</interceptors>
+		
+		<action name="doform" class="com.luodexin.strus2.userdefinterceptor.actions.DoformAction">
+			
+			<interceptor-ref name="myinterceptor"></interceptor-ref>
+			<interceptor-ref name="token"></interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			
+			<result>/success.jsp</result>
+			<result name="invalid.token">/token-error.jsp</result>
+			
+		</action>
+		
+		
+	</package>
+	
+
+
+</struts>

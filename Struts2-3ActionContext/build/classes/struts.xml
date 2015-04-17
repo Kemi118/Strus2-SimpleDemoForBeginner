@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<package name="getWEBresourse" extends="struts-default">
+		<action name="testActionContext" class="com.luodexin.struts2.getWEBresourse.Product"
+			method="execute">
+			<result name="success" type="dispatcher">/testActionContext.jsp</result>
+		</action>
+		
+		<action name="testXxxAware" class="com.luodexin.struts2.getWEBresourse.TestXxxAware"
+			method="execute">
+			<result name="success" type="dispatcher">/testXxxWare.jsp</result>
+		</action>
+		
+		<action name="TestServletActionContext" class="com.luodexin.struts2.getWEBresourse.TestServletActionContext"
+			method="execute">
+			<result name="success" type="dispatcher">/testServletActionContext.jsp</result>
+		</action>
+		<action name="TestServletXxxAware" class="com.luodexin.struts2.getWEBresourse.TestServletXxxAware">
+			<result name="success" type="dispatcher">/testServletActionContext.jsp</result>
+		</action>
+	</package>
+</struts>

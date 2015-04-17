@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+	<!-- 配置全局 国际化资源  -->
+	<constant name="struts.custom.i18n.resources" value="i18n"></constant>
+
+	<package name="i18nApp" extends="struts-default">
+		<action name="testi18n" class="com.luodexin.struts2.app.Testi18nAction">
+			<result >/i18n.jsp</result>
+		</action>
+
+	</package>
+
+</struts>

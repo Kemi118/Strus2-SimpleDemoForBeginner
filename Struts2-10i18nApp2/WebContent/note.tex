@@ -1,0 +1,35 @@
+I.Action 范围资源文件：
+	在Action类文件所在的路径建立名为ActionName_language_country.properties 的文件
+
+II.包范围资源文件：
+	在包的根路径下建立文件名为package_language_country.properties 的属性文件，
+	一旦建立，处于该包下的所有 Action 都可以访问该资源文件。
+	注意：包范围资源文件的 baseName 就是package，不是Action所在的包名。
+
+III.全局资源文件
+	命名方式: basename_language_country.properties
+	在struts.xml中配置
+		<constant name="struts.custom.i18n.resources" value="baseName"/>
+	struts.properties
+		struts.custom.i18n.resources=baseName
+
+IV.	临时指定资源文件：
+	<s:i18n.../> 标签的 name 属性指定临时的国际化资源文件(用得较少)
+	
+	
+V. 离 Action 较近的优先加载
+
+VI. 在 Action 中访问 国际资源文件
+		若 Action 类继承了 ActionSupport ，则可调用 TextProvider 接口的 getText 方法。
+		(ActionSupport 实现了TextProvider 接口 )
+		
+VII. 在 JSP 中访问国际化资源 
+	->不带占位符：
+		<s:text name="key"/>
+		表单元素的 label 属性：可替换为 key 或使用 getText() 方法，并对其进行强制 OGNL 解析
+	->带占位符：
+		在 <s:text.../> 标签中使用多个 <s:param.../> 标签来填充消息中的占位符。
+		Struts2 直接在国际化消息资源文件中通过 “${}” 使用表达式，该表达式将从值栈中获取对应的属性值
+
+	
+	

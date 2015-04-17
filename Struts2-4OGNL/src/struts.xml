@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	
+	<!-- enable Class Static Method -->
+	<constant name="struts.ognl.allowStaticMethodAccess" value="true"></constant>
+
+	<package name="testOGNL" extends="struts-default">
+		
+		<!-- 全局的  result -->
+		<global-results>
+			<result name="exceptionResult">/ErrorPage.jsp</result>
+		</global-results>
+		
+		<!-- 配置全局的异常处理 -->
+		<global-exception-mappings>
+			<exception-mapping result="exceptionResult" exception="java.lang.ArithmeticException"></exception-mapping>
+		</global-exception-mappings>
+
+		
+		<action name="input" class="com.luodexin.javaweb.ognl.Person"
+			method="excute">
+			<result name="success">/show.jsp</result>
+		</action>
+		
+		<action name="class*" >
+			<result name="success">/show.jsp</result>
+		</action>
+		
+		<action name="testException" class="com.luodexin.javaweb.ognl.Person"
+			method="handleException">
+			<!-- 也可以陪全局的
+			
+			<exception-mapping result="exceptionResult" exception="java.lang.ArithmeticException">
+			</exception-mapping>
+			<result name="exceptionResult">/ErrorPage.jsp</result>
+			
+			 -->
+		</action>
+		
+		
+		
+		
+		
+		
+		
+		
+	</package>
+	
+</struts>

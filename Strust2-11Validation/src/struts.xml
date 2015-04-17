@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	
+	<constant name="struts.custom.i18n.resources" value="i18n"></constant>
+
+	<package name="testvalidation" extends="struts-default">
+		<action name="testvalidation" class="com.luodexin.struts2.testvalidation.TestValidationAction">
+			<result>/success.jsp</result>
+			<result name="input">/testvalidation.jsp</result>
+		</action>
+		
+		<action name="testvalidation2" class="com.luodexin.struts2.testvalidation.TestValidationAction">
+			<result>/success.jsp</result>
+			<result name="input">/testvalidation2.jsp</result>
+		</action>
+				
+		<!-- 两次密码一致 -->
+		<action name="testPassWord" class="com.luodexin.struts2.testvalidation.TestValidationAction"
+			method="testpassword">
+			<result>/success.jsp</result>
+			<result name="input">/testvalidation3.jsp</result>
+		</action>
+	</package>
+
+</struts>

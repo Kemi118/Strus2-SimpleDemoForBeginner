@@ -1,0 +1,12 @@
+<!DOCTYPE validators PUBLIC
+        "-//Apache Struts//XWork Validator 1.0.2//EN"
+        "http://struts.apache.org/dtds/xwork-validator-1.0.2.dtd">
+
+<validators>
+	<field name="idcard">
+		<field-validator type="idcard">
+			<message>不是有效的身份证号！</message>
+		</field-validator>
+	</field>
+
+</validators>
